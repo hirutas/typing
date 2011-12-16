@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="./css/ui-lightness/jquery-ui-1.8.16.custom.css" />
    <script type="text/javascript" src="./js/jquery-1.6.2.min.js"></script>
    <script type="text/javascript" src="./js/jquery-ui-1.8.16.custom.min.js"></script>
+   <script type="text/javascript" src="./js/jquery.color"></script>
 </head>
 
 <body>
@@ -48,7 +49,8 @@ function answer_text(){
  var question_area_element = document.getElementById("question_area");
  if(question_texts[current_question_index] == input_text_element.value){
    document.getElementById('input_text').value = "";
-   result_area_element.innerHTML += "OK!<br />";
+   $('#wrapper').css('border-color', "#fff");
+   $('#wrapper').animate({borderColor: "#6e8fa5"}, 1000);
    seikai++;
    var progress = (question_texts.length - current_question_index - 1) / question_texts.length * 100;
    console.log(progress);
@@ -67,8 +69,8 @@ function answer_text(){
    $("#progressbar").progressbar('option', 'value', 100);
  }
    }else{
-     
-     result_area_element.innerHTML += "NG!<br />";
+     $('#wrapper').css('background-color', "red");
+     $('#wrapper').animate({backgroundColor: "#d9f1fd"}, 500);
      machigai++;
    }
  document.getElementById('input_text').value = "";
