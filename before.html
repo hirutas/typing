@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Page Title</title>
+</head>
+<body>
+
+<h1>タイピング練習</h1>
+<hr />
+同じテキストを入力してEnter (return)キーをおしてください
+<div id="question_area"></div>
+
+<form onsubmit="answer_text(); return false">
+ 入力 : <input type="text" id="input_text" />
+</form>
+<hr />
+<div id="result_area"></div>
+
+<script type="text/javascript">
+
+var question_texts = [
+   "testestest",
+   "hogehogehogehoge",
+   "piyopiyo",
+   "foobaa"
+   
+   
+];
+
+var current_question_index = 0;
+var question_area_element = document.getElementById("question_area");
+question_area_element.innerHTML = question_texts[current_question_index];
+
+var seikai = 0;
+var machigai = 0;
+
+function answer_text(){
+ var input_text_element = document.getElementById("input_text");
+ var result_area_element = document.getElementById("result_area");
+ var question_area_element = document.getElementById("question_area");
+ if(question_texts[current_question_index] == input_text_element.value){
+   document.getElementById('input_text').value = "";
+   result_area_element.innerHTML += "OK!<br />";
+   seikai++;
+   current_question_index++;
+ if(current_question_index < question_texts.length){  
+   question_area_element.innerHTML = question_texts[current_question_index];
+ }else{
+   document.getElementById('input_text').value = "";
+   alert("全ての問題に解答しました。　お疲れ様でした");
+   alert("正解数" + seikai);
+   alert("不正解" + machigai);
+   alert("正答率" + (seikai / (seikai + machigai) * 100) + "%");
+   current_question_index = 0;
+   question_area_element.innerHTML = question_texts[current_question_index];
+   
+   
+ }
+   }else{
+     
+     result_area_element.innerHTML += "NG!<br />";
+     machigai++;
+   }
+ document.getElementById('input_text').value = "";
+}
+
+</script>
+
+
+<hr />
+</body>
+</html>

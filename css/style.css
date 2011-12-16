@@ -1,0 +1,45 @@
+body {
+  padding: 20px 50px;
+  background-color: #9bc0d5;
+}
+
+h1 {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 0 0 10px;
+  text-shadow: 1px 1px 3px #333;  
+}
+
+div#wrapper {
+  padding: 10px 20px 20px 20px;
+  border: 3px solid #6e8fa5;
+  background-color: #d9f1fd;
+  border-radius: 10px;         /* CSS3草案 */  
+  -webkit-border-radius: 10px; /* Safari,Google Chrome用 */  
+  -moz-border-radius: 10px;    /* Firefox用 */  
+}
+
+div#question_area {
+  color: #27167c;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0 0 20px 0;
+}
+
+form {
+  margin: 0 0 10px 0;
+}
+
+form input {
+  font-size: 20px;
+  height: 25px;
+  width: 99%;
+}
+
+#progressbar {
+  margin: 0 0 30px 0;
+}
+
+.ui-progressbar {
+  height: 10px !important;
+}
